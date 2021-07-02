@@ -91,7 +91,7 @@ class Linktap {
         return $response->status;
     }
 
-    public function checkWateringStatusNew($tap) {
+    public function checkWateringStatus($tap) {
         $all_devices = $this->getAllDevices();
         if ($all_devices->result == 'error') {
             var_dump($all_devices->message);
@@ -103,17 +103,6 @@ class Linktap {
                 }
             }
         }
-    }
-
-    public function checkWateringStatus($tap) {
-        $data = array(
-            'gatewayId' => $this->gateway,
-            'taplinkerId' => $this->taps[$tap],
-        );
-        //$response = $this->post($data, 'checkWateringStatus');
-        $response = new Stdclass;
-        $response->status = "off";
-        return $response;
     }
 
     // workMode: currently activated work mode. ‘O’ is for Odd-Even Mode, ‘M’ is for Instant Mode, ‘I’ is for Interval Mode, ‘T’ is for 7-Day Mode, ‘Y’ is for Month

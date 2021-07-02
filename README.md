@@ -11,3 +11,5 @@ the taps array is used to give your taps a nice human readable name, full this i
 <br>    );
 <br>    protected $gateway = '<GATEWAY ID>';
 <br>    protected $username = '<USERNAME>';
+
+  The api has a 5 minute rate limit between each request. This is handled by caching the response to a a file called cache.json.
